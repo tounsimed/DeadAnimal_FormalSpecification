@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="Machine22"/>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="Context2"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="results"/>
+<org.eventb.core.variable name="1" org.eventb.core.identifier="stateOfAnimal"/>
+<org.eventb.core.variable name=":" org.eventb.core.identifier="stateOfSystem"/>
+<org.eventb.core.variable name=";" org.eventb.core.identifier="counter"/>
+<org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="oneShot">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="oneShot"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="rule 1">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rule 1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="@" org.eventb.core.convergence="2" org.eventb.core.extended="true" org.eventb.core.label="rule 3">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rule 3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="A" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="rule 2">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rule 2"/>
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="s1"/>
+<org.eventb.core.guard name="internal1" org.eventb.core.label="grd1" org.eventb.core.predicate="stateOfAnimal(s1)=alive"/>
+<org.eventb.core.action name="internal1" org.eventb.core.assignment="stateOfAnimal≔ (stateOfAnimal∖{s1↦alive})∪{s1↦dead}" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd11" org.eventb.core.predicate="counter(s1)+1=n"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="stateOfSystem(s1)≔alert" org.eventb.core.label="act11"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="counter(s1)≔counter(s1)+1" org.eventb.core.label="act12"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="B" org.eventb.core.convergence="2" org.eventb.core.extended="true" org.eventb.core.label="rule 4">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rule 4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="C" org.eventb.core.convergence="1" org.eventb.core.extended="true" org.eventb.core.label="rule 5">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rule 5"/>
+</org.eventb.core.event>
+<org.eventb.core.variant name="D" org.eventb.core.expression="stateOfSystem▷{normal}"/>
+<org.eventb.core.invariant name="E" org.eventb.core.label="Thm" org.eventb.core.predicate="dom(stateOfSystem▷{normal}) ∪ dom(stateOfSystem▷{alert}) =S" org.eventb.core.theorem="true"/>
+</org.eventb.core.machineFile>

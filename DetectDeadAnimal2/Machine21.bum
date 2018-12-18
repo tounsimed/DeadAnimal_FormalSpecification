@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="Machine2"/>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="Context2"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="results"/>
+<org.eventb.core.variable name="1" org.eventb.core.identifier="stateOfAnimal"/>
+<org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="liste_morts≔S×{∅}" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="oneShot">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="oneShot"/>
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="results=∅"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="results≔S" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd5" org.eventb.core.predicate="card(dom(stateOfAnimal▷{dead}))≥n"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="thm" org.eventb.core.predicate="card(union(liste_morts[S]))≥n" org.eventb.core.theorem="true"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="4" org.eventb.core.convergence="2" org.eventb.core.extended="false" org.eventb.core.label="detect_dead">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="detect_dead"/>
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="s1"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="stateOfAnimal(s1)=alive"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="stateOfAnimal≔ (stateOfAnimal∖{s1↦alive})∪{s1↦dead}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="liste_morts(s1)≔{s1}" org.eventb.core.label="act2"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="thm" org.eventb.core.predicate="liste_morts(s1)=∅" org.eventb.core.theorem="true"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="5" org.eventb.core.identifier="liste_morts"/>
+<org.eventb.core.invariant name="6" org.eventb.core.label="inv1" org.eventb.core.predicate="liste_morts ∈ S →ℙ (dom(stateOfAnimal▷{dead}))"/>
+<org.eventb.core.invariant name="7" org.eventb.core.label="inv2" org.eventb.core.predicate="∀w·stateOfAnimal(w)=dead ⇒w∈union(liste_morts[dom(stateOfAnimal▷{dead})])"/>
+<org.eventb.core.invariant name="@" org.eventb.core.label="inv4" org.eventb.core.predicate="∀ x·liste_morts(x)≠∅ ⇒x∈liste_morts(x)"/>
+<org.eventb.core.invariant name="8" org.eventb.core.label="thm1" org.eventb.core.predicate="union(liste_morts[S])=dom(stateOfAnimal▷{dead})" org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name="9" org.eventb.core.label="inv3" org.eventb.core.predicate="∀x,y·y≠x∧{x,y}⊆S⇒liste_morts(x)∩liste_morts(y)=∅"/>
+<org.eventb.core.invariant name=":" org.eventb.core.label="thm2" org.eventb.core.predicate="union(liste_morts[S])⊆S" org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name=";" org.eventb.core.label="thm3" org.eventb.core.predicate="∀w·stateOfAnimal(w)=alive ⇒w∉union(liste_morts[S])" org.eventb.core.theorem="true"/>
+<org.eventb.core.event name="=" org.eventb.core.convergence="2" org.eventb.core.extended="false" org.eventb.core.label="echanger">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="s1"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="s2"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="liste_morts ≔ liste_morts {s1↦liste_morts(s1)∪val, s2↦∅}" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="liste_morts(s1)≠∅ ∧ liste_morts(s2)≠∅ ∧ liste_morts(s2)=val "/>
+<org.eventb.core.guard name="0" org.eventb.core.label="grd6" org.eventb.core.predicate="s1≠s2"/>
+<org.eventb.core.guard name="." org.eventb.core.label="thm" org.eventb.core.predicate="stateOfAnimal(s1)=dead ∧ stateOfAnimal(s2)=dead" org.eventb.core.theorem="true"/>
+<org.eventb.core.parameter name="1" org.eventb.core.identifier="val"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="&gt;" org.eventb.core.label="thm4" org.eventb.core.predicate="∀ x·liste_morts(x)≠∅ ⇒stateOfAnimal(x)=dead" org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name="A" org.eventb.core.label="inv5" org.eventb.core.predicate="∀x,y·y≠x∧ stateOfAnimal(x)=dead ∧ x∈liste_morts(y) ⇒ liste_morts(x)=∅ "/>
+<org.eventb.core.invariant name="B" org.eventb.core.label="thm5" org.eventb.core.predicate="∀w·stateOfAnimal(w)=alive ⇒liste_morts(w)=∅" org.eventb.core.theorem="true"/>
+</org.eventb.core.machineFile>

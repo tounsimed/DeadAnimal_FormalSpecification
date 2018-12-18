@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="34">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="29">
+<org.eventb.core.poIdentifier name="S" org.eventb.core.type="ℙ(S)"/>
+<org.eventb.core.poIdentifier name="E" org.eventb.core.type="ℙ(S×S)"/>
+<org.eventb.core.poPredicate name="T" org.eventb.core.predicate="finite(S)" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="U" org.eventb.core.predicate="E⊆S × S" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="V" org.eventb.core.predicate="E=E∼" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="W" org.eventb.core.predicate="S ◁ (id ⦂ ℙ(S×S))∩E=(∅ ⦂ ℙ(S×S))" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="X" org.eventb.core.predicate="∀x⦂S,y⦂S·x∈S∧y∈S∧x≠y⇒x ↦ y∈E∧y ↦ x∈E" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#-"/>
+<org.eventb.core.poIdentifier name="animal_state" org.eventb.core.type="ℙ(animal_state)"/>
+<org.eventb.core.poIdentifier name="system_state" org.eventb.core.type="ℙ(system_state)"/>
+<org.eventb.core.poIdentifier name="alert" org.eventb.core.type="system_state"/>
+<org.eventb.core.poIdentifier name="alive" org.eventb.core.type="animal_state"/>
+<org.eventb.core.poIdentifier name="dead" org.eventb.core.type="animal_state"/>
+<org.eventb.core.poIdentifier name="indexe" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="n" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="normal" org.eventb.core.type="system_state"/>
+<org.eventb.core.poIdentifier name="totale" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poPredicate name="system_statf" org.eventb.core.predicate="n∈ℕ1∧n&gt;0∧n&lt;card(S)" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poPredicate name="system_statg" org.eventb.core.predicate="partition(animal_state,{alive},{dead})" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="system_stath" org.eventb.core.predicate="partition(system_state,{normal},{alert})" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#2"/>
+<org.eventb.core.poPredicate name="system_stati" org.eventb.core.predicate="∀z⦂ℙ(ℤ)·z⊆0 ‥ card(S)⇒indexe∈1 ‥ card(S) → z" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#3"/>
+<org.eventb.core.poPredicate name="system_statj" org.eventb.core.predicate="totale∈1 ‥ card(S) → ℕ" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#6"/>
+<org.eventb.core.poPredicate name="system_statk" org.eventb.core.predicate="totale(1)=indexe(1)" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#7"/>
+<org.eventb.core.poPredicate name="system_statl" org.eventb.core.predicate="∀n2⦂ℤ·n2&gt;1∧n2≤card(S)⇒totale(n2)=totale(n2 − 1)+indexe(n2)" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#8"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="32">
+<org.eventb.core.poIdentifier name="liste_morts" org.eventb.core.type="ℙ(S×ℙ(S))"/>
+<org.eventb.core.poIdentifier name="results" org.eventb.core.type="ℙ(S)"/>
+<org.eventb.core.poIdentifier name="stateOfAnimal" org.eventb.core.type="ℙ(S×animal_state)"/>
+<org.eventb.core.poPredicate name="stateOfAnimam" org.eventb.core.predicate="results⊆S" org.eventb.core.source="/DetectDeadAnimal2/Machine0.bum|org.eventb.core.machineFile#Machine0|org.eventb.core.invariant#*"/>
+<org.eventb.core.poPredicate name="stateOfAniman" org.eventb.core.predicate="stateOfAnimal∈S → animal_state" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.invariant#2"/>
+<org.eventb.core.poPredicate name="stateOfAnimao" org.eventb.core.predicate="⊤" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.invariant#3"/>
+<org.eventb.core.poPredicate name="stateOfAnimap" org.eventb.core.predicate="⊤" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.invariant#4"/>
+<org.eventb.core.poPredicate name="stateOfAnimaq" org.eventb.core.predicate="dom(stateOfAnimal ▷ {dead})∩dom(stateOfAnimal ▷ {alive})=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.invariant#5"/>
+<org.eventb.core.poPredicate name="stateOfAnimar" org.eventb.core.predicate="dom(stateOfAnimal ▷ {dead})∪dom(stateOfAnimal ▷ {alive})=S" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.invariant#6"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="inv2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext8"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀w⦂S·w∈dom(stateOfAnimal)∧stateOfAnimal∈S ⇸ animal_state" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inv4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext9"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S·x∈dom(liste_morts)∧liste_morts∈S ⇸ ℙ(S)" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#@"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#@"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext9"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm1/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext:"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="union(liste_morts[S])=dom(stateOfAnimal ▷ {dead})" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#8"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#8"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext:"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inv3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext;"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S,y⦂S·y≠x∧{x,y}⊆S⇒x∈dom(liste_morts)∧liste_morts∈S ⇸ ℙ(S)∧y∈dom(liste_morts)" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#9"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#9"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext;"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Theorem" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext&gt;"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀w⦂S·w∈dom(stateOfAnimal)∧stateOfAnimal∈S ⇸ animal_state" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#;"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext&gt;"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm3/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext&gt;"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀w⦂S·stateOfAnimal(w)=alive⇒w∉union(liste_morts[S])" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#;"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext&gt;"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Theorem" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext?"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S·x∈dom(liste_morts)∧liste_morts∈S ⇸ ℙ(S)∧(liste_morts(x)≠(∅ ⦂ ℙ(S))⇒x∈dom(stateOfAnimal)∧stateOfAnimal∈S ⇸ animal_state)" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext?"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm4/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext?"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S·liste_morts(x)≠(∅ ⦂ ℙ(S))⇒stateOfAnimal(x)=dead" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext?"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="inv5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Invariant" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext@"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S,y⦂S·(y≠x⇒x∈dom(stateOfAnimal)∧stateOfAnimal∈S ⇸ animal_state∧(stateOfAnimal(x)=dead⇒y∈dom(liste_morts)∧liste_morts∈S ⇸ ℙ(S)))∧(y≠x∧stateOfAnimal(x)=dead∧x∈liste_morts(y)⇒x∈dom(liste_morts))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext@"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Theorem" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContextA"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀w⦂S·w∈dom(stateOfAnimal)∧stateOfAnimal∈S ⇸ animal_state∧(stateOfAnimal(w)=alive⇒w∈dom(liste_morts)∧liste_morts∈S ⇸ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#B"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#B"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContextA"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="thm5/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContextA"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀w⦂S·stateOfAnimal(w)=alive⇒liste_morts(w)=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#B"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#B"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContextA"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimam"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="S × {∅ ⦂ ℙ(S)}∈S → ℙ(dom((S × {alive}) ▷ {dead}))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#6"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext8|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimam"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀w⦂S·(S × {alive})(w)=dead⇒w∈union((S × {∅ ⦂ ℙ(S)})[dom((S × {alive}) ▷ {dead})])" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext9|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimam"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S·(S × {∅ ⦂ ℙ(S)})(x)≠(∅ ⦂ ℙ(S))⇒x∈(S × {∅ ⦂ ℙ(S)})(x)" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#@"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#@"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext:|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimam"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S,y⦂S·y≠x∧{x,y}⊆S⇒(S × {∅ ⦂ ℙ(S)})(x)∩(S × {∅ ⦂ ℙ(S)})(y)=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#9"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#9"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext&gt;|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="30">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimam"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S,y⦂S·y≠x∧(S × {alive})(x)=dead∧x∈(S × {∅ ⦂ ℙ(S)})(y)⇒(S × {∅ ⦂ ℙ(S)})(x)=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.event#."/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#INITIALISATION\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContextA|org.eventb.core.poPredicate#PRD8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTstateOfAnimam" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="29">
+<org.eventb.core.poIdentifier name="results'" org.eventb.core.type="ℙ(S)"/>
+<org.eventb.core.poIdentifier name="liste_morts'" org.eventb.core.type="ℙ(S×ℙ(S))"/>
+<org.eventb.core.poIdentifier name="stateOfAnimal'" org.eventb.core.type="ℙ(S×animal_state)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPstateOfAnimam" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTIDENTstateOfAnimam" org.eventb.core.poStamp="29"/>
+<org.eventb.core.poSequent name="oneShot/thm/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Theorem" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAniman)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(union(liste_morts[S]))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#3|org.eventb.core.guard#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#3|org.eventb.core.guard#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAniman)"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="oneShot/thm/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAniman)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="card(union(liste_morts[S]))≥n" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#3|org.eventb.core.guard#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#3|org.eventb.core.guard#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAniman)"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTstateOfAniman" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="32">
+<org.eventb.core.poIdentifier name="results'" org.eventb.core.type="ℙ(S)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPstateOfAniman)" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTIDENTstateOfAniman" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="results=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#3|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="card(dom(stateOfAnimal ▷ {dead}))≥n" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#3|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPstateOfAniman" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAniman)" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="card(union(liste_morts[S]))≥n" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#3|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="detect_dead/thm/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Theorem" org.eventb.core.poStamp="34">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAnimao("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="s1∈dom(liste_morts)∧liste_morts∈S ⇸ ℙ(S)" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#4|org.eventb.core.guard#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#4|org.eventb.core.guard#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAnimao("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="detect_dead/thm/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="34">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAnimao("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="liste_morts(s1)=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#4|org.eventb.core.guard#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#4|org.eventb.core.guard#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAnimao("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="detect_dead/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="34">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimao"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="liste_morts{s1 ↦ {s1}}∈S → ℙ(dom(((stateOfAnimal ∖ {s1 ↦ alive})∪{s1 ↦ dead}) ▷ {dead}))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.event#0"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#4"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#6"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#detect_dead\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext8|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="detect_dead/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="34">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimao"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀w⦂S·((stateOfAnimal ∖ {s1 ↦ alive})∪{s1 ↦ dead})(w)=dead⇒w∈union((liste_morts{s1 ↦ {s1}})[dom(((stateOfAnimal ∖ {s1 ↦ alive})∪{s1 ↦ dead}) ▷ {dead})])" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.event#0"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#4"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#detect_dead\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext9|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="detect_dead/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="34">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimao"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S·(liste_morts{s1 ↦ {s1}})(x)≠(∅ ⦂ ℙ(S))⇒x∈(liste_morts{s1 ↦ {s1}})(x)" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#@"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.event#0"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#4"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#@"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#detect_dead\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext:|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="detect_dead/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="34">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimao"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S,y⦂S·y≠x∧{x,y}⊆S⇒(liste_morts{s1 ↦ {s1}})(x)∩(liste_morts{s1 ↦ {s1}})(y)=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#9"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.event#0"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#4"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#9"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#detect_dead\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext&gt;|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="detect_dead/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="34">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimao"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S,y⦂S·y≠x∧((stateOfAnimal ∖ {s1 ↦ alive})∪{s1 ↦ dead})(x)=dead∧x∈(liste_morts{s1 ↦ {s1}})(y)⇒(liste_morts{s1 ↦ {s1}})(x)=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/DetectDeadAnimal2/Machine2.bum|org.eventb.core.machineFile#Machine2|org.eventb.core.event#0"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#4"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#detect_dead\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContextA|org.eventb.core.poPredicate#PRD8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTstateOfAnimao" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="32">
+<org.eventb.core.poIdentifier name="liste_morts'" org.eventb.core.type="ℙ(S×ℙ(S))"/>
+<org.eventb.core.poIdentifier name="stateOfAnimal'" org.eventb.core.type="ℙ(S×animal_state)"/>
+<org.eventb.core.poIdentifier name="s1" org.eventb.core.type="S"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPstateOfAnimao(" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTIDENTstateOfAnimao" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="stateOfAnimal(s1)=alive" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#4|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPstateOfAnimao" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAnimao(" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="liste_morts(s1)=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#4|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="echanger/grd4/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTIDENTstateOfAnimap"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="s1∈dom(liste_morts)∧liste_morts∈S ⇸ ℙ(S)∧(liste_morts(s1)≠(∅ ⦂ ℙ(S))⇒s2∈dom(liste_morts))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#=|org.eventb.core.guard#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#=|org.eventb.core.guard#-"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTIDENTstateOfAnimap"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="echanger/thm/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Theorem" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAnimap("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="s1∈dom(stateOfAnimal)∧stateOfAnimal∈S ⇸ animal_state∧(stateOfAnimal(s1)=dead⇒s2∈dom(stateOfAnimal))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#=|org.eventb.core.guard#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#=|org.eventb.core.guard#."/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAnimap("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="echanger/thm/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAnimap("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="stateOfAnimal(s1)=dead∧stateOfAnimal(s2)=dead" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#=|org.eventb.core.guard#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#=|org.eventb.core.guard#."/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAnimap("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="echanger/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimap"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="liste_morts{s1 ↦ liste_morts(s1)∪val,s2 ↦ (∅ ⦂ ℙ(S))}∈S → ℙ(dom(stateOfAnimal ▷ {dead}))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#="/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#6"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#echanger\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext8|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="echanger/inv2/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimap"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀w⦂S·stateOfAnimal(w)=dead⇒w∈union((liste_morts{s1 ↦ liste_morts(s1)∪val,s2 ↦ (∅ ⦂ ℙ(S))})[dom(stateOfAnimal ▷ {dead})])" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#="/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#7"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#echanger\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext9|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="echanger/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimap"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S·(liste_morts{s1 ↦ liste_morts(s1)∪val,s2 ↦ (∅ ⦂ ℙ(S))})(x)≠(∅ ⦂ ℙ(S))⇒x∈(liste_morts{s1 ↦ liste_morts(s1)∪val,s2 ↦ (∅ ⦂ ℙ(S))})(x)" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#@"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#="/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#@"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#echanger\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext:|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="echanger/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimap"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S,y⦂S·y≠x∧{x,y}⊆S⇒(liste_morts{s1 ↦ liste_morts(s1)∪val,s2 ↦ (∅ ⦂ ℙ(S))})(x)∩(liste_morts{s1 ↦ liste_morts(s1)∪val,s2 ↦ (∅ ⦂ ℙ(S))})(y)=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#9"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#="/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#9"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#echanger\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext&gt;|org.eventb.core.poPredicate#PRD4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="echanger/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimap"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂S,y⦂S·y≠x∧stateOfAnimal(x)=dead∧x∈(liste_morts{s1 ↦ liste_morts(s1)∪val,s2 ↦ (∅ ⦂ ℙ(S))})(y)⇒(liste_morts{s1 ↦ liste_morts(s1)∪val,s2 ↦ (∅ ⦂ ℙ(S))})(x)=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#="/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#A"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poSequent#echanger\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContextA|org.eventb.core.poPredicate#PRD8"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="echanger/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimap"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="s1∈dom(liste_morts)∧liste_morts∈S ⇸ ℙ(S)" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#=|org.eventb.core.action#+"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#=|org.eventb.core.action#+"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTALLHYPstateOfAnimap"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTstateOfAnimap" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="32">
+<org.eventb.core.poIdentifier name="s2" org.eventb.core.type="S"/>
+<org.eventb.core.poIdentifier name="liste_morts'" org.eventb.core.type="ℙ(S×ℙ(S))"/>
+<org.eventb.core.poIdentifier name="val" org.eventb.core.type="ℙ(S)"/>
+<org.eventb.core.poIdentifier name="s1" org.eventb.core.type="S"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPstateOfAnimap(" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTIDENTstateOfAnimap" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="liste_morts(s1)≠(∅ ⦂ ℙ(S))∧liste_morts(s2)≠(∅ ⦂ ℙ(S))∧liste_morts(s2)=val" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#=|org.eventb.core.guard#-"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="s1≠s2" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#=|org.eventb.core.guard#0"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPstateOfAnimap" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#EVTHYPstateOfAnimap(" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="stateOfAnimal(s1)=dead∧stateOfAnimal(s2)=dead" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.event#=|org.eventb.core.guard#."/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPContext8" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="liste_morts∈S → ℙ(dom(stateOfAnimal ▷ {dead}))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#6"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPContext9" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext8" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="∀w⦂S·stateOfAnimal(w)=dead⇒w∈union(liste_morts[dom(stateOfAnimal ▷ {dead})])" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#7"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPContext:" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext9" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="∀x⦂S·liste_morts(x)≠(∅ ⦂ ℙ(S))⇒x∈liste_morts(x)" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#@"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPContext;" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext:" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="union(liste_morts[S])=dom(stateOfAnimal ▷ {dead})" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#8"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPContext&gt;" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext;" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="∀x⦂S,y⦂S·y≠x∧{x,y}⊆S⇒liste_morts(x)∩liste_morts(y)=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#9"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="union(liste_morts[S])⊆S" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#:"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPContext?" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext&gt;" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="∀w⦂S·stateOfAnimal(w)=alive⇒w∉union(liste_morts[S])" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#;"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPContext@" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext?" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="∀x⦂S·liste_morts(x)≠(∅ ⦂ ℙ(S))⇒stateOfAnimal(x)=dead" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#&gt;"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPContextA" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContext@" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="∀x⦂S,y⦂S·y≠x∧stateOfAnimal(x)=dead∧x∈liste_morts(y)⇒liste_morts(x)=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#A"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine21.bpo|org.eventb.core.poFile#Machine21|org.eventb.core.poPredicateSet#HYPContextA" org.eventb.core.poStamp="32">
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="∀w⦂S·stateOfAnimal(w)=alive⇒liste_morts(w)=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine21.bum|org.eventb.core.machineFile#Machine21|org.eventb.core.invariant#B"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

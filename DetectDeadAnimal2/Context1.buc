@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="S"/>
+<org.eventb.core.constant name="(" org.eventb.core.identifier="E"/>
+<org.eventb.core.axiom name=")" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(S)"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm2" org.eventb.core.predicate="E⊆S×S"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm3" org.eventb.core.predicate="E=E∼"/>
+<org.eventb.core.axiom name="," org.eventb.core.label="axm4" org.eventb.core.predicate="S◁id∩E=∅"/>
+<org.eventb.core.axiom name="-" org.eventb.core.label="axm5" org.eventb.core.predicate="∀x,y·x∈S∧y∈S∧x≠y⇒x↦y∈E∧y↦x∈E"/>
+</org.eventb.core.contextFile>

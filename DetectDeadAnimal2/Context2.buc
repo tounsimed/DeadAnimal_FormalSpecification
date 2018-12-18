@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="Context1"/>
+<org.eventb.core.constant name="(" org.eventb.core.identifier="normal"/>
+<org.eventb.core.constant name=")" org.eventb.core.identifier="alert"/>
+<org.eventb.core.constant name="*" org.eventb.core.identifier="alive"/>
+<org.eventb.core.constant name="+" org.eventb.core.identifier="dead"/>
+<org.eventb.core.constant name="," org.eventb.core.identifier="n"/>
+<org.eventb.core.carrierSet name="-" org.eventb.core.identifier="system_state"/>
+<org.eventb.core.carrierSet name="." org.eventb.core.identifier="animal_state"/>
+<org.eventb.core.axiom name="/" org.eventb.core.label="axm1" org.eventb.core.predicate="n∈ℕ1∧n&gt;0∧n&lt;card(S)"/>
+<org.eventb.core.axiom name="1" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(animal_state,{alive},{dead})"/>
+<org.eventb.core.axiom name="2" org.eventb.core.label="axm4" org.eventb.core.predicate="partition(system_state,{normal},{alert})"/>
+<org.eventb.core.axiom name="3" org.eventb.core.label="axm5" org.eventb.core.predicate="∀z·z ⊆ 0‥card(S)⇒indexe∈1‥card(S)→z"/>
+<org.eventb.core.constant name="4" org.eventb.core.identifier="indexe"/>
+<org.eventb.core.constant name="5" org.eventb.core.identifier="totale"/>
+<org.eventb.core.axiom name="6" org.eventb.core.label="axm6" org.eventb.core.predicate="totale∈1‥card(S)→ℕ"/>
+<org.eventb.core.axiom name="7" org.eventb.core.label="axm7" org.eventb.core.predicate="totale(1)=indexe(1)"/>
+<org.eventb.core.axiom name="8" org.eventb.core.label="axm8" org.eventb.core.predicate="∀n2·n2&gt;1∧n2≤card(S)⇒ totale(n2)=totale(n2−1)+indexe(n2)"/>
+</org.eventb.core.contextFile>

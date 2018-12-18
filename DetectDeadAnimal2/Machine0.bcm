@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+<org.eventb.core.scSeesContext name="'" org.eventb.core.scTarget="/DetectDeadAnimal2/Context1.bcc" org.eventb.core.source="/DetectDeadAnimal2/Machine0.bum|org.eventb.core.machineFile#Machine0|org.eventb.core.seesContext#("/>
+<org.eventb.core.scInternalContext name="Context1">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(S)" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="E⊆S × S" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name=")" org.eventb.core.label="axm3" org.eventb.core.predicate="E=E∼" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#+" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="*" org.eventb.core.label="axm4" org.eventb.core.predicate="S ◁ (id ⦂ ℙ(S×S))∩E=(∅ ⦂ ℙ(S×S))" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="+" org.eventb.core.label="axm5" org.eventb.core.predicate="∀x⦂S,y⦂S·x∈S∧y∈S∧x≠y⇒x ↦ y∈E∧y ↦ x∈E" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#-" org.eventb.core.theorem="false"/>
+<org.eventb.core.scConstant name="E" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.constant#(" org.eventb.core.type="ℙ(S×S)"/>
+<org.eventb.core.scCarrierSet name="S" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(S)"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scInvariant name="Context2" org.eventb.core.label="inv1" org.eventb.core.predicate="results⊆S" org.eventb.core.source="/DetectDeadAnimal2/Machine0.bum|org.eventb.core.machineFile#Machine0|org.eventb.core.invariant#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scVariable name="results" org.eventb.core.abstract="false" org.eventb.core.concrete="true" org.eventb.core.source="/DetectDeadAnimal2/Machine0.bum|org.eventb.core.machineFile#Machine0|org.eventb.core.variable#)" org.eventb.core.type="ℙ(S)"/>
+<org.eventb.core.scEvent name="Context3" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/DetectDeadAnimal2/Machine0.bum|org.eventb.core.machineFile#Machine0|org.eventb.core.event#'">
+<org.eventb.core.scAction name="'" org.eventb.core.assignment="results ≔ ∅ ⦂ ℙ(S)" org.eventb.core.label="act1" org.eventb.core.source="/DetectDeadAnimal2/Machine0.bum|org.eventb.core.machineFile#Machine0|org.eventb.core.event#'|org.eventb.core.action#'"/>
+</org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="Context4" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="oneShot" org.eventb.core.source="/DetectDeadAnimal2/Machine0.bum|org.eventb.core.machineFile#Machine0|org.eventb.core.event#+">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="results=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine0.bum|org.eventb.core.machineFile#Machine0|org.eventb.core.event#+|org.eventb.core.guard#'" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAction name="(" org.eventb.core.assignment="results ≔ S" org.eventb.core.label="act1" org.eventb.core.source="/DetectDeadAnimal2/Machine0.bum|org.eventb.core.machineFile#Machine0|org.eventb.core.event#+|org.eventb.core.action#("/>
+</org.eventb.core.scEvent>
+</org.eventb.core.scMachineFile>

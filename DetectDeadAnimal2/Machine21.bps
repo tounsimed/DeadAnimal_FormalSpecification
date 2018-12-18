@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+<org.eventb.core.psStatus name="inv2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="inv4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="thm1/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="inv3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="thm3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="thm3/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="thm4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="thm4/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="inv5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="thm5/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="thm5/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="oneShot/thm/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="oneShot/thm/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="detect_dead/thm/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="34" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="detect_dead/thm/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="34" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="detect_dead/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="34" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="detect_dead/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="34" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="detect_dead/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="34" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="detect_dead/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="34" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="detect_dead/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="34" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="echanger/grd4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="echanger/thm/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="echanger/thm/THM" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="echanger/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+<org.eventb.core.psStatus name="echanger/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="echanger/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="echanger/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="echanger/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="true"/>
+<org.eventb.core.psStatus name="echanger/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="32" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

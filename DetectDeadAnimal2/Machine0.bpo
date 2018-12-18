@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="6">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="6">
+<org.eventb.core.poIdentifier name="S" org.eventb.core.type="ℙ(S)"/>
+<org.eventb.core.poIdentifier name="E" org.eventb.core.type="ℙ(S×S)"/>
+<org.eventb.core.poPredicate name="T" org.eventb.core.predicate="finite(S)" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="U" org.eventb.core.predicate="E⊆S × S" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="V" org.eventb.core.predicate="E=E∼" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="W" org.eventb.core.predicate="S ◁ (id ⦂ ℙ(S×S))∩E=(∅ ⦂ ℙ(S×S))" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="X" org.eventb.core.predicate="∀x⦂S,y⦂S·x∈S∧y∈S∧x≠y⇒x ↦ y∈E∧y ↦ x∈E" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine0.bpo|org.eventb.core.poFile#Machine0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="6">
+<org.eventb.core.poIdentifier name="results" org.eventb.core.type="ℙ(S)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTContext3" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine0.bpo|org.eventb.core.poFile#Machine0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="6">
+<org.eventb.core.poIdentifier name="results'" org.eventb.core.type="ℙ(S)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPContext3" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine0.bpo|org.eventb.core.poFile#Machine0|org.eventb.core.poPredicateSet#EVTIDENTContext3" org.eventb.core.poStamp="6"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTContext4" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine0.bpo|org.eventb.core.poFile#Machine0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="6">
+<org.eventb.core.poIdentifier name="results'" org.eventb.core.type="ℙ(S)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPContext4" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine0.bpo|org.eventb.core.poFile#Machine0|org.eventb.core.poPredicateSet#EVTIDENTContext4" org.eventb.core.poStamp="6">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="results=(∅ ⦂ ℙ(S))" org.eventb.core.source="/DetectDeadAnimal2/Machine0.bum|org.eventb.core.machineFile#Machine0|org.eventb.core.event#+|org.eventb.core.guard#'"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Machine0.bpo|org.eventb.core.poFile#Machine0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="6">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="results⊆S" org.eventb.core.source="/DetectDeadAnimal2/Machine0.bum|org.eventb.core.machineFile#Machine0|org.eventb.core.invariant#*"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

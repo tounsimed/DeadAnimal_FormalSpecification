@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="17">
+<org.eventb.core.poIdentifier name="S" org.eventb.core.type="ℙ(S)"/>
+<org.eventb.core.poIdentifier name="E" org.eventb.core.type="ℙ(S×S)"/>
+<org.eventb.core.poPredicate name="T" org.eventb.core.predicate="finite(S)" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="U" org.eventb.core.predicate="E⊆S × S" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="V" org.eventb.core.predicate="E=E∼" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="W" org.eventb.core.predicate="S ◁ (id ⦂ ℙ(S×S))∩E=(∅ ⦂ ℙ(S×S))" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="X" org.eventb.core.predicate="∀x⦂S,y⦂S·x∈S∧y∈S∧x≠y⇒x ↦ y∈E∧y ↦ x∈E" org.eventb.core.source="/DetectDeadAnimal2/Context1.buc|org.eventb.core.contextFile#Context1|org.eventb.core.axiom#-"/>
+<org.eventb.core.poIdentifier name="animal_state" org.eventb.core.type="ℙ(animal_state)"/>
+<org.eventb.core.poIdentifier name="system_state" org.eventb.core.type="ℙ(system_state)"/>
+<org.eventb.core.poIdentifier name="alert" org.eventb.core.type="system_state"/>
+<org.eventb.core.poIdentifier name="alive" org.eventb.core.type="animal_state"/>
+<org.eventb.core.poIdentifier name="dead" org.eventb.core.type="animal_state"/>
+<org.eventb.core.poIdentifier name="indexe" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="n" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="normal" org.eventb.core.type="system_state"/>
+<org.eventb.core.poIdentifier name="totale" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="axm1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="n∈ℕ1∧n&gt;0⇒finite(S)" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#ABSHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#HYPContext4"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(S)" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#3"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#3"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#HYPContext4"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm6/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#HYPContext5"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(S)" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#6"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#6"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#HYPContext5"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm7/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#HYPContext6"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="1∈dom(totale)∧totale∈ℤ ⇸ ℤ∧1∈dom(indexe)∧indexe∈ℤ ⇸ ℤ" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#7"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#7"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#HYPContext6"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm8/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#HYPContext7"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀n2⦂ℤ·(n2&gt;1⇒finite(S))∧(n2&gt;1∧n2≤card(S)⇒n2∈dom(totale)∧totale∈ℤ ⇸ ℤ∧n2 − 1∈dom(totale)∧n2∈dom(indexe)∧indexe∈ℤ ⇸ ℤ)" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#8"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#8"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#HYPContext7"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYPContext4" org.eventb.core.parentSet="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="n∈ℕ1∧n&gt;0∧n&lt;card(S)" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(animal_state,{alive},{dead})" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#1"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(system_state,{normal},{alert})" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#2"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPContext5" org.eventb.core.parentSet="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#HYPContext4" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="∀z⦂ℙ(ℤ)·z⊆0 ‥ card(S)⇒indexe∈1 ‥ card(S) → z" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#3"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPContext6" org.eventb.core.parentSet="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#HYPContext5" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="totale∈1 ‥ card(S) → ℕ" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#6"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPContext7" org.eventb.core.parentSet="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#HYPContext6" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="totale(1)=indexe(1)" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#7"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/DetectDeadAnimal2/Context2.bpo|org.eventb.core.poFile#Context2|org.eventb.core.poPredicateSet#HYPContext7" org.eventb.core.poStamp="17">
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="∀n2⦂ℤ·n2&gt;1∧n2≤card(S)⇒totale(n2)=totale(n2 − 1)+indexe(n2)" org.eventb.core.source="/DetectDeadAnimal2/Context2.buc|org.eventb.core.contextFile#Context2|org.eventb.core.axiom#8"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

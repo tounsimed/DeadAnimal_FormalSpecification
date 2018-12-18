@@ -1,0 +1,339 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\MultiTitle{DetectDeadAnimal}
+\MultiHeader{CONTEXT}{Context1}
+\CONTEXT{Context1}{}{}
+\SETS{
+	\Set{S}{}
+}
+\CONSTANTS{
+	\Constant{E}{}
+}
+\AXIOMS{
+	\Axiom{axm1}{false}{$finite(S)$}{}
+	\Axiom{axm2}{false}{$E\subseteq{}S\cprod{}S$}{}
+	\Axiom{axm3}{false}{$E=E\converse{}$}{}
+	\Axiom{axm4}{false}{$S\domres{}id\binter{}E=\emptyset{}$}{}
+	\Axiom{axm5}{false}{$\forall{}x,y\qdot{}x\in{}S\land{}y\in{}S\land{}x\neq{}y\limp{}x\mapsto{}y\in{}E\land{}y\mapsto{}x\in{}E$}{}
+}
+\END
+\MultiHeader{CONTEXT}{Context2}
+\CONTEXT{Context2}{Context1}{}
+\SETS{
+	\Set{system\_state}{}
+	\Set{animal\_state}{}
+}
+\CONSTANTS{
+	\Constant{normal}{}
+	\Constant{alert}{}
+	\Constant{alive}{}
+	\Constant{dead}{}
+	\Constant{n}{}
+	\Constant{indexe}{}
+	\Constant{totale}{}
+}
+\AXIOMS{
+	\Axiom{axm1}{false}{$n\in{}\natn{}\land{}n>0\land{}n<card(S)$}{}
+	\Axiom{axm3}{false}{$partition(animal\_state,\{alive\},\{dead\})$}{}
+	\Axiom{axm4}{false}{$partition(system\_state,\{normal\},\{alert\})$}{}
+	\Axiom{axm5}{false}{$\forall{}z\qdot{}z \subseteq{} 0\upto{}card(S)\limp{}indexe\in{}1\upto{}card(S)\tfun{}z$}{}
+	\Axiom{axm6}{false}{$totale\in{}1\upto{}card(S)\tfun{}\nat{}$}{}
+	\Axiom{axm7}{false}{$totale(1)=indexe(1)$}{}
+	\Axiom{axm8}{false}{$\forall{}n2\qdot{}n2>1\land{}n2\leq{}card(S)\limp{} totale(n2)=totale(n2-1)+indexe(n2)$}{}
+}
+\END
+\MultiHeader{MACHINE}{Machine0}
+\MACHINE{Machine0}{}{Context1}{}
+\VARIABLES{
+	\Variable{results}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$results\subseteq{}S$}{}
+}
+\EVENTS{
+\INITIALISATION{false}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$results\bcmeq{}\emptyset{}$}{true}{}
+	}
+}
+\EVT{oneShot}{false}{ordinary}{}{}{
+	\GUARDS{false}{
+		\Guard{grd1}{false}{$results=\emptyset{}$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$results\bcmeq{}S$}{true}{}
+	}
+}
+}
+\END
+\MultiHeader{MACHINE}{Machine1}
+\MACHINE{Machine1}{Machine0}{Context2}{}
+\VARIABLES{
+	\Variable{results}{}
+	\Variable{animal\_dead}{}
+	\Variable{animal\_alive}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$animal\_alive\subseteq{}S$}{}
+	\Invariant{inv2}{false}{$animal\_dead\subseteq{}S$}{}
+	\Invariant{inv3}{false}{$animal\_dead\binter{}animal\_alive=\emptyset{}$}{}
+	\Invariant{inv4}{false}{$animal\_dead\bunion{}animal\_alive=S$}{}
+}
+\EVENTS{
+\INITIALISATION{true}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$results\bcmeq{}\emptyset{}$}{false}{}
+		\Action{act2}{$animal\_alive\bcmeq{}S$}{true}{}
+		\Action{act3}{$animal\_dead\bcmeq{}\emptyset{}$}{true}{}
+	}
+}
+\EVT{oneShot}{true}{ordinary}{oneShot}{}{
+	\GUARDS{false}{
+		\Guard{grd1}{false}{$results=\emptyset{}$}{false}{}
+		\Guard{grd3}{false}{$card(animal\_dead)\geq{}n$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$results\bcmeq{}S$}{false}{}
+	}
+}
+\EVT{detect\_dead}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{s1}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$s1\in{}animal\_alive$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$animal\_alive\bcmeq{}animal\_alive\setminus{}\{s1\}$}{true}{}
+		\Action{act2}{$animal\_dead\bcmeq{}animal\_dead\bunion{}\{s1\}$}{true}{}
+	}
+}
+}
+\END
+\MultiHeader{MACHINE}{Machine2}
+\MACHINE{Machine2}{Machine1}{Context2}{}
+\VARIABLES{
+	\Variable{results}{}
+	\Variable{stateOfAnimal}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$stateOfAnimal\in{}S\tfun{}animal\_state$}{}
+	\Invariant{inv2}{false}{$dom(stateOfAnimal\ranres{}\{alive\})=animal\_alive$}{}
+	\Invariant{inv3}{false}{$dom(stateOfAnimal\ranres{}\{dead\})=animal\_dead$}{}
+}
+\EVENTS{
+\INITIALISATION{false}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$results\bcmeq{}\emptyset{}$}{true}{}
+		\Action{act4}{$stateOfAnimal\bcmeq{}S\cprod{}\{alive\}$}{true}{}
+	}
+}
+\EVT{oneShot}{false}{ordinary}{oneShot}{}{
+	\GUARDS{false}{
+		\Guard{grd1}{false}{$results=\emptyset{}$}{true}{}
+		\Guard{grd5}{false}{$card(dom(stateOfAnimal\ranres{}\{dead\}))\geq{}n$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$results\bcmeq{}S$}{true}{}
+	}
+}
+\EVT{detect\_dead}{false}{ordinary}{detect\_dead}{}{
+	\ANY{
+		\Param{s1}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$stateOfAnimal(s1)=alive$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$stateOfAnimal\bcmeq{} (stateOfAnimal\setminus{}\{s1\mapsto{}alive\})\bunion{}\{s1\mapsto{}dead\}$}{true}{}
+	}
+}
+}
+\END
+\MultiHeader{MACHINE}{Machine21}
+\MACHINE{Machine21}{Machine2}{Context2}{}
+\VARIABLES{
+	\Variable{results}{}
+	\Variable{stateOfAnimal}{}
+	\Variable{liste\_morts}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$liste\_morts \in{} S \tfun{}\pow{} (dom(stateOfAnimal\ranres{}\{dead\}))$}{}
+	\Invariant{inv2}{false}{$\forall{}w\qdot{}stateOfAnimal(w)=dead \limp{}w\in{}union(liste\_morts[dom(stateOfAnimal\ranres{}\{dead\})])$}{}
+	\Invariant{inv4}{false}{$\forall{} x\qdot{}liste\_morts(x)\neq{}\emptyset{} \limp{}x\in{}liste\_morts(x)$}{}
+	\Invariant{thm1}{true}{$union(liste\_morts[S])=dom(stateOfAnimal\ranres{}\{dead\})$}{}
+	\Invariant{inv3}{false}{$\forall{}x,y\qdot{}y\neq{}x\land{}\{x,y\}\subseteq{}S\limp{}liste\_morts(x)\binter{}liste\_morts(y)=\emptyset{}$}{}
+	\Invariant{thm2}{true}{$union(liste\_morts[S])\subseteq{}S$}{}
+	\Invariant{thm3}{true}{$\forall{}w\qdot{}stateOfAnimal(w)=alive \limp{}w\notin{}union(liste\_morts[S])$}{}
+	\Invariant{thm4}{true}{$\forall{} x\qdot{}liste\_morts(x)\neq{}\emptyset{} \limp{}stateOfAnimal(x)=dead$}{}
+	\Invariant{inv5}{false}{$\forall{}x,y\qdot{}y\neq{}x\land{} stateOfAnimal(x)=dead \land{} x\in{}liste\_morts(y) \limp{} liste\_morts(x)=\emptyset{} $}{}
+	\Invariant{thm5}{true}{$\forall{}w\qdot{}stateOfAnimal(w)=alive \limp{}liste\_morts(w)=\emptyset{}$}{}
+}
+\EVENTS{
+\INITIALISATION{true}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$results\bcmeq{}\emptyset{}$}{false}{}
+		\Action{act4}{$stateOfAnimal\bcmeq{}S\cprod{}\{alive\}$}{false}{}
+		\Action{act5}{$liste\_morts\bcmeq{}S\cprod{}\{\emptyset{}\}$}{true}{}
+	}
+}
+\EVT{oneShot}{false}{ordinary}{oneShot}{}{
+	\GUARDS{false}{
+		\Guard{grd1}{false}{$results=\emptyset{}$}{true}{}
+		\Guard{grd5}{false}{$card(dom(stateOfAnimal\ranres{}\{dead\}))\geq{}n$}{true}{}
+		\Guard{thm}{true}{$card(union(liste\_morts[S]))\geq{}n$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$results\bcmeq{}S$}{true}{}
+	}
+}
+\EVT{detect\_dead}{false}{ordinary}{detect\_dead}{}{
+	\ANY{
+		\Param{s1}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$stateOfAnimal(s1)=alive$}{true}{}
+		\Guard{thm}{true}{$liste\_morts(s1)=\emptyset{}$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$stateOfAnimal\bcmeq{} (stateOfAnimal\setminus{}\{s1\mapsto{}alive\})\bunion{}\{s1\mapsto{}dead\}$}{true}{}
+		\Action{act2}{$liste\_morts(s1)\bcmeq{}\{s1\}$}{true}{}
+	}
+}
+\EVT{echanger}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{s1}{true}{}
+		\Param{s2}{true}{}
+		\Param{val}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd4}{false}{$liste\_morts(s1)\neq{}\emptyset{} \land{} liste\_morts(s2)\neq{}\emptyset{} \land{} liste\_morts(s2)=val $}{true}{}
+		\Guard{grd6}{false}{$s1\neq{}s2$}{true}{}
+		\Guard{thm}{true}{$stateOfAnimal(s1)=dead \land{} stateOfAnimal(s2)=dead$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$liste\_morts \bcmeq{} liste\_morts \ovl{}\{s1\mapsto{}liste\_morts(s1)\bunion{}val, s2\mapsto{}\emptyset{}\}$}{true}{}
+	}
+}
+}
+\END
+\MultiHeader{MACHINE}{Machine22}
+\MACHINE{Machine22}{Machine21}{Context2}{}
+\VARIABLES{
+	\Variable{results}{}
+	\Variable{stateOfAnimal}{}
+	\Variable{stateOfSystem}{}
+	\Variable{counter}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$stateOfSystem\in{}S\tfun{}system\_state$}{}
+	\Invariant{inv2}{false}{$counter\in{}S\tfun{}0\upto{}card(S)$}{}
+	\Invariant{inv3}{false}{$\btrue{}$}{\\$\forall{}$x,n1$\qdot{}$counter(x)=n1$\limp{}$card(dom(stateOfAnimal$\ranres{}$$\{$dead$\}$))$\geq{}$n1}
+	\Invariant{inv4}{false}{$\forall{}x\qdot{}x\in{}S\limp{}counter(x)=card(liste\_morts(x))$}{}
+	\Invariant{inv5}{false}{$\forall{}x\qdot{}counter(x)\geq{}n\limp{}stateOfSystem(x)=alert$}{}
+	\Invariant{inv6}{false}{$\forall{}x\qdot{}stateOfSystem(x)=alert\limp{}(\exists{}y\qdot{}counter(y)\geq{}n)$}{}
+	\Invariant{inv7}{false}{$stateOfSystem\ranres{}\{alert\}=\emptyset{}\limp{}(\forall{}x\qdot{}x\in{}S\limp{}counter(x)<n)$}{}
+	\Invariant{thm1}{true}{$\forall{}x\qdot{}stateOfAnimal(x)=alive\limp{}counter(x)=0$}{}
+}
+\EVENTS{
+\INITIALISATION{false}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$results\bcmeq{}\emptyset{}$}{true}{}
+		\Action{act4}{$stateOfAnimal\bcmeq{}S\cprod{}\{alive\}$}{true}{}
+		\Action{act6}{$counter\bcmeq{}S\cprod{}\{0\}$}{true}{}
+		\Action{act7}{$stateOfSystem\bcmeq{}S\cprod{}\{normal\}$}{true}{}
+	}
+}
+\EVT{oneShot}{false}{ordinary}{oneShot}{}{
+	\GUARDS{false}{
+		\Guard{grd1}{false}{$results=\emptyset{}$}{true}{}
+		\Guard{grd5}{false}{$card(dom(stateOfAnimal\ranres{}\{dead\}))\geq{}n$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$results\bcmeq{}S$}{true}{}
+	}
+}
+\EVT{rule~1}{false}{ordinary}{detect\_dead}{}{
+	\ANY{
+		\Param{s1}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$stateOfAnimal(s1)=alive$}{true}{}
+		\Guard{grd2}{false}{$counter(s1)+1<n$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$stateOfAnimal\bcmeq{} (stateOfAnimal\setminus{}\{s1\mapsto{}alive\})\bunion{}\{s1\mapsto{}dead\}$}{true}{}
+		\Action{act2}{$counter(s1)\bcmeq{}counter(s1)+1$}{true}{}
+	}
+}
+\EVT{rule~3}{false}{ordinary}{echanger}{}{
+	\ANY{
+		\Param{s1}{true}{}
+		\Param{s2}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd4}{false}{$counter(s1)\neq{}0 \land{} counter(s2)\neq{}0$}{true}{}
+		\Guard{grd6}{false}{$s1\neq{}s2$}{true}{}
+		\Guard{thm}{true}{$stateOfAnimal(s1)=dead \land{} stateOfAnimal(s2)=dead$}{true}{}
+		\Guard{grd7}{false}{$counter(s1)+counter(s2)<n$}{true}{}
+	}
+	\WITNESSES{
+		\Witness{val}{$liste\_morts(s2)=val $}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$counter\bcmeq{}counter\ovl{}\{s1\mapsto{}counter(s1)+counter(s2),s2\mapsto{}0\}$}{true}{}
+	}
+}
+\EVT{rule~2}{false}{ordinary}{detect\_dead}{}{
+	\ANY{
+		\Param{s1}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$stateOfAnimal(s1)=alive$}{true}{}
+		\Guard{thm}{true}{$liste\_morts(s1)=\emptyset{}$}{true}{}
+		\Guard{grd11}{false}{$counter(s1)+1=n$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$stateOfAnimal\bcmeq{} (stateOfAnimal\setminus{}\{s1\mapsto{}alive\})\bunion{}\{s1\mapsto{}dead\}$}{true}{}
+		\Action{act11}{$stateOfSystem(s1)\bcmeq{}alert$}{true}{}
+		\Action{act12}{$counter(s1)\bcmeq{}counter(s1)+1$}{true}{}
+	}
+}
+\EVT{rule~4}{false}{ordinary}{echanger}{}{
+	\ANY{
+		\Param{s1}{true}{}
+		\Param{s2}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd4}{false}{$counter(s1)\neq{}0 \land{} counter(s2)\neq{}0$}{true}{}
+		\Guard{grd6}{false}{$s1\neq{}s2$}{true}{}
+		\Guard{thm}{true}{$stateOfAnimal(s1)=dead \land{} stateOfAnimal(s2)=dead$}{true}{}
+		\Guard{grd7}{false}{$stateOfSystem(s1)=normal \land{} stateOfSystem(s2)=normal$}{true}{}
+		\Guard{grd8}{false}{$counter(s1)+counter(s2)\geq{}n$}{true}{}
+	}
+	\WITNESSES{
+		\Witness{val}{$liste\_morts(s2)=val $}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$counter\bcmeq{}counter\ovl{}\{s1\mapsto{}counter(s1)+counter(s2), s2\mapsto{}0\}$}{true}{}
+		\Action{act2}{$stateOfSystem\bcmeq{}stateOfSystem\ovl{}\{s1\mapsto{}alert, s2\mapsto{}alert\}$}{true}{}
+	}
+}
+\EVT{rule~5}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{s1}{true}{}
+		\Param{s2}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{false}{$stateOfSystem(s1)=alert$}{true}{}
+		\Guard{grd2}{false}{$stateOfSystem(s2)=normal$}{true}{}
+		\Guard{thm}{true}{$s1\neq{}s2$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$stateOfSystem(s2)\bcmeq{}alert$}{true}{}
+	}
+}
+}
+\END
+\end{document}

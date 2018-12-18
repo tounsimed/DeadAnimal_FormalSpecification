@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="Machine23"/>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="Context2"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="results"/>
+<org.eventb.core.variable name="1" org.eventb.core.identifier="stateOfAnimal"/>
+<org.eventb.core.variable name=":" org.eventb.core.identifier="stateOfSystem"/>
+<org.eventb.core.variable name=";" org.eventb.core.identifier="counter"/>
+<org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="oneShot">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="oneShot"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="rule 1">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rule 1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="@" org.eventb.core.convergence="1" org.eventb.core.extended="true" org.eventb.core.label="rule 3">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rule 3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="A" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="rule 2">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rule 2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="B" org.eventb.core.convergence="1" org.eventb.core.extended="true" org.eventb.core.label="rule 4">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rule 4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="C" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="rule 5">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="rule 5"/>
+</org.eventb.core.event>
+<org.eventb.core.variant name="D" org.eventb.core.expression="S∖{x·x∈S∧ stateOfAnimal(x)=dead ∧ counter(x)=0∣x}"/>
+</org.eventb.core.machineFile>
